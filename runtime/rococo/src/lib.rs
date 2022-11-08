@@ -60,7 +60,7 @@ use frame_support::{
 	weights::ConstantMultiplier,
 	PalletId, RuntimeDebug,
 };
-use frame_system::EnsureRoot;
+use frame_system::{EnsureRoot, EnsureSigned};
 use pallet_grandpa::{fg_primitives, AuthorityId as GrandpaId};
 use pallet_im_online::sr25519::AuthorityId as ImOnlineId;
 use pallet_session::historical as session_historical;
@@ -1171,7 +1171,7 @@ parameter_types! {
 }
 
 type AuctionInitiate = EitherOfDiverse<
-	EnsureRoot<AccountId>,
+	EnsureSigned<AccountId>,
 	pallet_collective::EnsureProportionAtLeast<AccountId, CouncilCollective, 2, 3>,
 >;
 
