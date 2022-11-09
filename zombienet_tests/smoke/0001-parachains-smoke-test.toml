@@ -9,7 +9,7 @@ default_command = "./target/release/polkadot"
 name = "alice"
 
 [[parachains]]
-id = 2001
+id = 1234
 #cumulus_based = true
 add_to_genesis = false
 
