@@ -1,9 +1,5 @@
 # Guide on creating a local crowdloan
 
-### Step 0
-
-Download Zombienet. Move the binary to *this* directory.
-
 ### Step 1
 
 Build polkadot node **WITH THE FAST-RUNTIME FEATURE**: `cargo b -r -p polkadot --features fast-runtime`
@@ -16,6 +12,9 @@ Build `adder-collator` node: `cargo b -r -p test-parachain-adder-collator`
 
 Ensure your binaries lie in the correct dir:
 `ls target/release | grep polkadot`, `ls target/release | grep adder-collator`
+
+Install zombienet for your OS from here: https://github.com/paritytech/zombienet
+Move the zombienet binary (macOS or Linux) to **this** directory (project root of `polkadot`).
 
 Start the network with the following command (we use the native OS as the host for the network):
 `./zombienet-(macos|linux) -p native spawn zombienet_tests/smoke/0001-parachains-smoke-test.toml`
